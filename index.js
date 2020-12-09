@@ -45,8 +45,8 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(){
-  
+function copy(arr){
+    return arr.slice();
 }    
 
 
@@ -64,8 +64,8 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(task_2){
-   if (task_2.length === 31) {
+function is31Flavors(arr){
+   if (arr.length === 31) {
        return true
    } else {
        return false
@@ -85,8 +85,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(arr, str){
+    arr.unshift(str);
+    return arr;
 }
 
 
@@ -101,8 +102,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(arr){
+   arr.pop();
+   return arr
 }
 
 
@@ -138,8 +140,9 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(arr, str) {
+    arr.splice(arr.indexOf(str), 1);
+    return arr;
 }
 
 
@@ -164,8 +167,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(arr, str){
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].includes(str)) {
+            newArr.push(arr[i]);
+        } 
+    }
+    return newArr;
 }
 
 
